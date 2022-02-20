@@ -3,6 +3,7 @@ const url="https://api.tvmaze.com/shows/7/episodes"
 
 let container=document.querySelector(".container")
 let listMovies=document.querySelector("#listMovies") 
+let search=document.querySelector("#search")
 
 const card=(data)=>{
     for(let movie of data){
@@ -18,8 +19,19 @@ const card=(data)=>{
         img.src=movie.image.medium;
         let i=document.createElement("i")
         i.classList.add("bi","bi-play","button")
+        let a=document.createElement("a")
+        a.href=movie.url;
+        let season=movie.season;
+        if(season<10)
+            season="0"+season;
+        let number=movie.number;
+        if(number<10)
+            number="0"+number;
+        a.innerText=`S${season}E${number}`;
+        i.append(a);
         let i2=document.createElement("i")
         i2.classList.add("bi","bi-clock","button")
+        i2.innerText=`   ${movie.runtime}`;
         div.append(img);
         div.append(p);
         div.append(p2);
@@ -59,6 +71,20 @@ axios.get(url).then((Response)=>{
             let myMovie=movies.filter((el)=>{
                 return el.name===listMovies.value
             })
+                removeCard();
+                card(myMovie);
+            }
+        })
+        search.addEventListener("input",()=>{
+            console.log(search.value)
+            if(search.value===""){
+                removeCard();
+                card(movies);
+            }else{
+                let myMovie=movies.filter((el)=>{
+                    console.log(el);
+                    return el.summary.includes(search.value)
+                })
                 removeCard();
                 card(myMovie);
             }

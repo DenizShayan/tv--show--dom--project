@@ -1,11 +1,20 @@
+header{
+    /* background-color: azure; */
+    text-align:center;
+    display:flex;
+    justify-content: space-around;
+}
 body{
     background-color: purple;
     padding: 3rem;
     align-items: center;
     color: white;
 }
+a {
+    color:white;
+}
 .container {
-    margin: 6px;
+    margin: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap:10px;
