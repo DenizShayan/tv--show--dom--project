@@ -5,12 +5,27 @@ body{
     color: white;
 }
 .container {
+    margin: 6px;
     display: flex;
     flex-wrap: wrap;
     gap:10px;
     justify-content: space-between;
+    /* background-color: blue; */
 }
-.para {
+/* .para {
     display: flex;
     justify-content: space-between ;
+    text-align: center;
+} */
+
+.myImages{
+    /* background-color: black; */
+    display:inline-block;
+    width: min-content;
+    height: 450px;
+    text-align: center;
+}
+
+.button{
+    margin:1em;
 }
