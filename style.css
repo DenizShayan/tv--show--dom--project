@@ -1,0 +1,16 @@
+body{
+    background-color: purple;
+    padding: 3rem;
+    align-items: center;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: space-between;
+}
+.para {
+    display: flex;
+    justify-content: space-between ;
+}
